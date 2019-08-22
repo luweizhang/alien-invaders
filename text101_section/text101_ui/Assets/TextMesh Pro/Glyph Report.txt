@@ -1,0 +1,31 @@
+Font: Bombing  Style: Regular
+Point Size: 76   SP/PD Ratio: 6.6%
+
+Characters included: 80/99
+Missing characters: 19
+Excluded characters: 0
+
+Characters missing from font file:
+----------------------------------------
+ID: 34	Hex: 22	Char ["]
+ID: 37	Hex: 25	Char [%]
+ID: 38	Hex: 26	Char [&]
+ID: 44	Hex: 2C	Char [,]
+ID: 59	Hex: 3B	Char [;]
+ID: 64	Hex: 40	Char [@]
+ID: 91	Hex: 5B	Char [[]
+ID: 92	Hex: 5C	Char [\]
+ID: 93	Hex: 5D	Char []]
+ID: 94	Hex: 5E	Char [^]
+ID: 96	Hex: 60	Char [`]
+ID: 123	Hex: 7B	Char [{]
+ID: 124	Hex: 7C	Char [|]
+ID: 125	Hex: 7D	Char [}]
+ID: 126	Hex: 7E	Char [~]
+ID: 160	Hex: A0	Char [ ]
+ID: 8203	Hex: 200B	Char [​]
+ID: 8230	Hex: 2026	Char […]
+ID: 9633	Hex: 25A1	Char [□]
+
+Characters excluded from packing:
+----------------------------------------
