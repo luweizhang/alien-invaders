@@ -8,7 +8,7 @@ public class Ball : MonoBehaviour
     //config params
     [SerializeField] Paddle paddle1;
     [SerializeField] float xPush = 2f;
-    [SerializeField] float yPush = 35f;
+    [SerializeField] float yPush = 25f;
 
     //state
     Vector2 paddleToBallVector;
