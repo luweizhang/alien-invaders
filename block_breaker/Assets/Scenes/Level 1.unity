@@ -393,6 +393,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1280058643}
     m_Modifications:
+    - target: {fileID: 3499030406967007491, guid: 65f1674342c307844a14fc449b07bdd8,
+        type: 3}
+      propertyPath: breakSound
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3499030406967007493, guid: 65f1674342c307844a14fc449b07bdd8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -582,6 +587,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Block Red
       objectReference: {fileID: 0}
+    - target: {fileID: 3485147349096823409, guid: c5d19500f0afe0946a871ba0fd19d17c,
+        type: 3}
+      propertyPath: breakSound
+      value: 
+      objectReference: {fileID: 8300000, guid: ef34aa724df914f4493ffb1f05df261f, type: 3}
     - target: {fileID: 3485147349096823411, guid: c5d19500f0afe0946a871ba0fd19d17c,
         type: 3}
       propertyPath: m_LocalPosition.x
