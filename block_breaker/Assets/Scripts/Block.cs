@@ -27,20 +27,22 @@ public class Block : MonoBehaviour {
     private void DestroyBlock()
     {
         //Debug.Log(collision.gameObject.name);
-
         Destroy(gameObject);
-        AudioSource.PlayClipAtPoint(breakSound, Camera.main.transform.position);
         level.BlockDestroyed();
-
-        FindObjectOfType<GameSession>().AddToScore();
-
+        PlayBlockDestorySFX();
         TriggerSparklesVFX();
+    }
 
+    private void PlayBlockDestorySFX()
+    {
+        FindObjectOfType<GameSession>().AddToScore();
+        AudioSource.PlayClipAtPoint(breakSound, Camera.main.transform.position);
     }
 
     private void TriggerSparklesVFX()
     {
         GameObject sparkles = Instantiate(blockSparklesVFX, transform.position, transform.rotation);
+        Destroy(sparkles, 1f);
 
     }
 
