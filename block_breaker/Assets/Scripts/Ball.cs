@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
+﻿using System.Security.Cryptography;
 using UnityEngine;
 
 public class Ball : MonoBehaviour
@@ -10,19 +8,24 @@ public class Ball : MonoBehaviour
     [SerializeField] float xPush = 2f;
     [SerializeField] float yPush = 25f;
     [SerializeField] AudioClip[] ballSounds;
+    [SerializeField] float randomFactor = 0.2f;
+    [SerializeField] float maxBallSpeed = 15f;
 
     //state
     Vector2 paddleToBallVector;
     bool hasStarted = false;
 
     // Cached component references
-    AudioSource myAudioSource; 
+    AudioSource myAudioSource;
+    Rigidbody2D myRigidBody2D;
+  
 
     // Start is called before the first frame update
     void Start()
     {
         paddleToBallVector = transform.position - paddle1.transform.position;
         myAudioSource = GetComponent<AudioSource>();
+        myRigidBody2D = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -46,18 +49,28 @@ public class Ball : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             hasStarted = true;
-            GetComponent<Rigidbody2D>().velocity = new Vector2(xPush, yPush);
+            myRigidBody2D.velocity = new Vector2(xPush, yPush);
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (hasStarted) {
+        Vector2 velocityTweak = new Vector2
+            (Random.Range(0f, randomFactor)
+            , Random.Range(0f, randomFactor));
 
+        if (hasStarted) 
+        {
             AudioClip clip = ballSounds[UnityEngine.Random.Range(0, ballSounds.Length)];
             myAudioSource.PlayOneShot(clip);
-        };
-            
-    }
+            myRigidBody2D.velocity += velocityTweak; // random tweak to ball velocity after each collision
 
+            // if ball is too slow, increase the ball velocity
+            if (myRigidBody2D.velocity.magnitude <= maxBallSpeed) {
+                float diff = maxBallSpeed - myRigidBody2D.velocity.magnitude;
+                Debug.Log(myRigidBody2D.velocity.magnitude);
+                myRigidBody2D.velocity += new Vector2(myRigidBody2D.velocity.x * .02f * diff, myRigidBody2D.velocity.y * .02f * diff);
+            }
+        };
+    }
 }

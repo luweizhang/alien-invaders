@@ -142,6 +142,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2649eb0a39d21e14c94256e7e8ca3dd2, type: 3}
   - {fileID: 8300000, guid: ab3c47b3ef7a4234199fd5785bc695e9, type: 3}
   - {fileID: 8300000, guid: b3fccb237eb88bd4785f682b9ae0e171, type: 3}
+  randomFactor: 0.05
+  maxBallSpeed: 13
 --- !u!82 &341967331
 AudioSource:
   m_ObjectHideFlags: 0
