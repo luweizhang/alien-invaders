@@ -1,2 +1,2 @@
 # unity2d
-learning 2d game dev in unity
+2d block breaker game dev created in unity
