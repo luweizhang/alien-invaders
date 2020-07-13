@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Block : MonoBehaviour {
 
@@ -10,11 +7,11 @@ public class Block : MonoBehaviour {
     [SerializeField] GameObject blockSparklesVFX;
     [SerializeField] Sprite[] hitSprites;
 
-    // cached reference
-    Level level;
-
     // state variables
     [SerializeField] int timesHit = 0; // TODO only serialized for debug purposes
+
+    // cached reference
+    Level level;
 
     private void Start()
     {
@@ -36,6 +33,7 @@ public class Block : MonoBehaviour {
         if (tag == "Breakable")
         {
             HandleHit();
+
         }
     }
 
@@ -43,9 +41,14 @@ public class Block : MonoBehaviour {
     {
         timesHit++;
         int maxHits = hitSprites.Length + 1;
+
+        FindObjectOfType<GameSession>().AddToScore();
+
         if (timesHit >= maxHits)
         {
             DestroyBlock();
+            FindObjectOfType<GameSession>().AddToScore();
+            FindObjectOfType<GameSession>().AddToScore();
         }
         else
         {
@@ -71,13 +74,12 @@ public class Block : MonoBehaviour {
         //Debug.Log(collision.gameObject.name);
         Destroy(gameObject);
         level.BlockDestroyed();
-        PlayBlockDestorySFX();
+        PlayBlockDestroySFX();
         TriggerSparklesVFX();
     }
 
-    private void PlayBlockDestorySFX()
+    private void PlayBlockDestroySFX()
     {
-        FindObjectOfType<GameSession>().AddToScore();
         AudioSource.PlayClipAtPoint(breakSound, Camera.main.transform.position);
     }
 

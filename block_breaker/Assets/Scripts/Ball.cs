@@ -1,5 +1,4 @@
-﻿using System.Security.Cryptography;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
@@ -61,16 +60,24 @@ public class Ball : MonoBehaviour
 
         if (hasStarted) 
         {
-            AudioClip clip = ballSounds[UnityEngine.Random.Range(0, ballSounds.Length)];
+            AudioClip clip = ballSounds[Random.Range(0, ballSounds.Length)];
             myAudioSource.PlayOneShot(clip);
             myRigidBody2D.velocity += velocityTweak; // random tweak to ball velocity after each collision
 
             // if ball is too slow, increase the ball velocity
             if (myRigidBody2D.velocity.magnitude <= maxBallSpeed) {
-                float diff = maxBallSpeed - myRigidBody2D.velocity.magnitude;
-                Debug.Log(myRigidBody2D.velocity.magnitude);
-                myRigidBody2D.velocity += new Vector2(myRigidBody2D.velocity.x * .02f * diff, myRigidBody2D.velocity.y * .02f * diff);
+
+                if (myRigidBody2D.velocity.magnitude <= 5f)
+                {
+                    myRigidBody2D.velocity += new Vector2(2f, 2f);
+                }
+                else { 
+                    float diff = maxBallSpeed - myRigidBody2D.velocity.magnitude;
+                    myRigidBody2D.velocity += new Vector2(myRigidBody2D.velocity.x * .02f * diff, myRigidBody2D.velocity.y * .02f * diff);
+                }
             }
         };
+
+        Debug.Log(myRigidBody2D.velocity.magnitude);
     }
 }
