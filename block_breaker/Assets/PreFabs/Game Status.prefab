@@ -47,6 +47,7 @@ MonoBehaviour:
   gameSpeed: 1
   pointsPerBlockDestroyed: 87
   scoreText: {fileID: 1093288970186445609}
+  isAutoPlayEnabled: 0
   currentScore: 0
 --- !u!1001 &4609935349014157867
 PrefabInstance:
