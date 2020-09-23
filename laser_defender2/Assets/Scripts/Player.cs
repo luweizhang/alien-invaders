@@ -23,6 +23,12 @@ public class Player : MonoBehaviour
     [SerializeField] AudioClip shootSound;
     [SerializeField] [Range(0, 1)] float shootSoundVolume = .25f;
 
+    [SerializeField] AudioClip takeDamageSound;
+    [SerializeField] [Range(0, 1)] float takeDamageVolume = .25f;
+
+    [SerializeField] GameObject deathVFX;
+    [SerializeField] float durationOfExplosion = 1f;
+
     Coroutine firingCoroutine;
 
     float xMin;
@@ -112,12 +118,15 @@ public class Player : MonoBehaviour
     {
         health -= damageDealer.GetDamage();
         damageDealer.Hit();
+        AudioSource.PlayClipAtPoint(takeDamageSound, Camera.main.transform.position, takeDamageVolume);
 
         if (health <= 0)
         {
             // Die
             Destroy(gameObject);
+            GameObject explosion = Instantiate(deathVFX, transform.position, transform.rotation);
             AudioSource.PlayClipAtPoint(deathSound, Camera.main.transform.position, deathSoundVolume);
+            Destroy(explosion, durationOfExplosion);
         }
     }
 }
