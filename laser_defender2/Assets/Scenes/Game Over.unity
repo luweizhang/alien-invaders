@@ -596,6 +596,75 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1115170129}
   m_CullTransparentMesh: 0
+--- !u!1001 &1158689130
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1622461734451680847, guid: 5c7b82ba15585684a86e2cbc365e0c8d,
+        type: 3}
+      propertyPath: m_Name
+      value: Music Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5386200097091554882, guid: 5c7b82ba15585684a86e2cbc365e0c8d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5386200097091554882, guid: 5c7b82ba15585684a86e2cbc365e0c8d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5386200097091554882, guid: 5c7b82ba15585684a86e2cbc365e0c8d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5386200097091554882, guid: 5c7b82ba15585684a86e2cbc365e0c8d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5386200097091554882, guid: 5c7b82ba15585684a86e2cbc365e0c8d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5386200097091554882, guid: 5c7b82ba15585684a86e2cbc365e0c8d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5386200097091554882, guid: 5c7b82ba15585684a86e2cbc365e0c8d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5386200097091554882, guid: 5c7b82ba15585684a86e2cbc365e0c8d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5386200097091554882, guid: 5c7b82ba15585684a86e2cbc365e0c8d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5386200097091554882, guid: 5c7b82ba15585684a86e2cbc365e0c8d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5386200097091554882, guid: 5c7b82ba15585684a86e2cbc365e0c8d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5c7b82ba15585684a86e2cbc365e0c8d, type: 3}
 --- !u!1001 &1410107008
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -912,7 +981,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Quit '
+  m_text: Main Menu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8de23f65ef56b414997e6a22acb62ee6, type: 2}
   m_sharedMaterial: {fileID: 7879138236362511917, guid: 8de23f65ef56b414997e6a22acb62ee6,
