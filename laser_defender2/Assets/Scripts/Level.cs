@@ -13,14 +13,16 @@ public class Level : MonoBehaviour
     public void LoadGame()
     {
         SceneManager.LoadScene("Game");
+        if (FindObjectsOfType<GameSession>().Length > 0)
+        {
+            FindObjectOfType<GameSession>().ResetGame();
+        }
     }
 
     public void LoadGameOver()
     {
 
         StartCoroutine(WaitAndLoad());
-
-        //SceneManager.LoadScene("Game Over");
 
     }
 

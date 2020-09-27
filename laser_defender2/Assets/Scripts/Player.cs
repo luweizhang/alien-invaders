@@ -37,7 +37,6 @@ public class Player : MonoBehaviour
     float yMin;
     float yMax;
 
-    
 
     // Start is called before the first frame update
     void Start()
@@ -117,6 +116,7 @@ public class Player : MonoBehaviour
     private void ProcessHit(DamageDealer damageDealer)
     {
         health -= damageDealer.GetDamage();
+        FindObjectOfType<GameSession>().ChangeHealthDisplay(-damageDealer.GetDamage());
         damageDealer.Hit();
         AudioSource.PlayClipAtPoint(takeDamageSound, Camera.main.transform.position, takeDamageVolume);
 
